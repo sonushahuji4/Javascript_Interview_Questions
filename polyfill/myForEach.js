@@ -5,7 +5,7 @@ arr.forEach((item) => console.log(item))
 
 // Created new polyfill method which will mimic as forEach
 Array.prototype.myForEach = function(cb){
-    for(index= 0; index < this.length; index++){
+    for(let index= 0; index < this.length; index++){
         cb(this[index])
     }
 }
