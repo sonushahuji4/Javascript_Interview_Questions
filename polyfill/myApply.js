@@ -29,3 +29,8 @@ Function.prototype.myApply = function(obj={}, args){
 }
 
 personAge.myApply(personOne,[100])
+
+Function.prototype.apply = function(scope, args){
+    scope._this = this
+    return scope._this(args)
+}

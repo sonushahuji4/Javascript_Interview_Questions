@@ -27,3 +27,11 @@ Function.prototype.myBind = function(obj={}, ...args1){
 
 const newFunOne = personAge.myBind(personOne)
 newFunOne(100)
+
+
+Function.prototype.Bind = function(scope, ...args){
+    scope._this = this
+    return function(){
+        return scope._this(...args)
+    }
+}

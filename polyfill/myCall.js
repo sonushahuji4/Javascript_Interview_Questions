@@ -25,3 +25,9 @@ Function.prototype.myCall = function(obj={}, ...args){
 }
 
 personAge.myCall(personOne,100)
+
+
+Function.prototype.Call = function(scope, ...args){
+    scope._this = this
+    return scope._this(...args)
+}
