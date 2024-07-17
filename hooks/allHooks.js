@@ -146,6 +146,7 @@ export default CounterDisplay;
  * 2. Dependencies Array: You can specify an array of dependencies as the second argument to useCallback. React will re-create the memoized function only when any of the dependencies change. If the dependencies array is empty, the function will only be created once and won't change for the lifetime of the component.
  * 3. Avoiding Unnecessary Re-renders: By memoizing functions with useCallback, you can prevent unnecessary re-renders in child components that rely on reference equality to determine if props have changed.
  */
+ /** Link: https://www.youtube.com/watch?v=5zempLONkxM&ab_channel=YoshitaJain */
 
 import React, { useState, useCallback } from 'react';
 
