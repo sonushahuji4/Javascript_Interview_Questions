@@ -244,3 +244,51 @@ function TextInputWithFocusButton() {
     </div>
   );
 }
+
+
+
+/**
+  Higher Order Components
+  * A higher-order component is a function that takes a component and returns a new component with enhanced functionality. 
+  - what ?
+  - why ?
+  - when ?
+  - how ?
+
+*/
+
+import React, { useState } from 'react';
+
+function App() {
+  
+
+  return (
+    <div classNampe="parrent-component">
+      <HocRed cmp={CounterCmp}/>
+      <HocBlue cmp={CounterCmp}/>
+    </div>
+    )
+    
+}
+
+export default App;
+
+
+const HocRed = (props) => {
+    return <p style={{color: "red"}}><props.cmp/></p>
+}
+
+const HocBlue = (props) => {
+    return <p style={{color: "blue"}}><props.cmp/></p>
+}
+
+const CounterCmp = () => {
+  
+  const [count, setCount] = useState(0)
+  
+  return <div>
+    <p> Red count : {count} </p>
+      <button onClick={() => setCount(count + 1)}> count </button><br/> <br/>
+  </div>
+}
+
