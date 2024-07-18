@@ -292,3 +292,27 @@ const CounterCmp = () => {
   </div>
 }
 
+
+/**
+  React Component Life Cycle
+  1. Mounting - Birth of your component
+  2. Update - Growth of your component
+  3. UnMount - Death of your component
+
+  Phase 1
+    1. render() is used to render HTML of component in react. This method is required for class based component to render DOM.
+        It runs during the mounting and updating of your component.
+  Phase 2
+    1. componentDidMount() method runs after the component output has been rendered to the DOM.
+
+  Phase 3
+    1. componentDidUpdate() method invokes as soon as updating happens. The most use case for componentDidUpdate() is updating the DOM in response to props or state change.
+
+  Phase 4
+    1. componentWillUnmount() method is called just before the component is unmounted and destroyed. Usually used to perform cleanups.
+
+
+
+    
+    
+*/
