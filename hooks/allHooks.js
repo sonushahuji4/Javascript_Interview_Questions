@@ -424,6 +424,32 @@ export default useCounter;
 
 
 
+/**
+
+  Lazy Loading in ReactJS
+    1. Lazy loading in ReactJS is a technique used to improve performance by loading components or resources only when they are needed, rather than at the initial page load.
+
+    2. Key Points:
+      - Improves Performance: Reduces initial load time by splitting the code into smaller chunks and loading them on demand.
+      - React.lazy(): A built-in method to lazy load components.
+      - Suspense: Used to display a fallback (like a loading spinner) while the lazy-loaded component is being fetched.
+*/
+
+import { lazy, Suspense } from "react";
+
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+const App = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+
+
+
+
 
 
 
