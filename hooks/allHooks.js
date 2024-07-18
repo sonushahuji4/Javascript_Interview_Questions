@@ -448,6 +448,20 @@ const App = () => {
 }
 
 
+/**
+  Link : https://www.youtube.com/watch?v=uE925hp9KDk&ab_channel=AkshaySaini
+  Virtual DOM
+  1. What is DOM : Document, Object, Model
+    - Javaxript provide DOM APIs to do some manipulation to HTML web page or update it via javascript.
+    - HTML -> converted to DOM -> Rendered View
+    - Updating the DOM is a lighter operation, but re-rendering parts post-update in the browser is a very costly operation. If you do this frequently, you might reduce the performance of your app, eventually making it slower. This is where some libraries come into play to solve that problem.
+    - React never ever update the original DOM tree 
+    - React create's Virtual DOM, that looks excatly the Original DOM
+    - Instead of changing the real DOM right away, React first updates a lightweight copy of it. It compares this copy to the old one, finds what's different, and updates only those parts in the real DOM. This makes React apps faster and more efficient.
+    - Reconciliation, explain above part, if asked in an interview
+    - React uses Diffing algorithm to find out the what has been changed and then in batches it updates the real DOM at a certain frequency.
+*/
+
 
 
 
