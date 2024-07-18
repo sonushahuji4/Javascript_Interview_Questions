@@ -378,3 +378,53 @@ const CounterCmp = () => {
       
    - passing data component to component, parent to child, sliblings etc
 */
+
+
+
+/**
+  Custom Hooks in React
+    1. Custom Hooks are Regular JavaScript Functions:
+      - Custom hooks are essentially JavaScript functions. The key difference is that their names start with "use", which is a convention that indicates they follow the rules of hooks.
+    
+    2. Using Other Hooks in Custom Hooks:
+      - Inside custom hooks, you can utilize other React hooks (like useState, useEffect, useContext, etc.). This allows you to create hooks that manage state, handle side effects, or use context in a reusable way.
+    
+    3. Extracting and Reusing Logic:
+      - One of the primary reasons for creating custom hooks is to extract and reuse logic that is common across multiple components. This helps in avoiding code duplication and keeps your components cleaner and more focused on their primary responsibilities.
+
+    4. Code Reusability:
+      - Custom hooks allow you to encapsulate logic that can be reused across different components. This promotes the DRY (Don't Repeat Yourself) principle and reduces redundancy in your codebase.
+    
+    5. Separation of Concerns:
+      - By moving logic into custom hooks, you can separate the logic from the UI. This makes your components more focused and easier to manage, as they only handle rendering and user interactions.
+
+    6. Testability
+      - Custom hooks can be tested independently of the components that use them. This makes it easier to write unit tests and ensures that your logic works correctly in isolation.
+    
+*/
+
+
+import { useState } from "react";
+
+const useCounter = () => {
+  const [count, setCount] = useState(0);
+
+  const increament = () => {
+    setCount(count + 1)
+  }
+
+  const decrement = () => {
+    setCount(count - 1)
+  }
+
+  return [count, increament, decrement]
+}
+
+export default useCounter;
+
+
+
+
+
+
+
