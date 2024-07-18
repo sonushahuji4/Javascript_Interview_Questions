@@ -310,9 +310,71 @@ const CounterCmp = () => {
 
   Phase 4
     1. componentWillUnmount() method is called just before the component is unmounted and destroyed. Usually used to perform cleanups.
-
-
-
     
-    
+*/
+
+
+
+/**
+  State Management
+  
+  - state / props
+      props (short for “properties”) and state are both plain JavaScript objects.
+      both hold information that influences the output of render
+      props get passed to the component (similar to function parameters)
+      state is managed within the component (similar to variables declared within a function)
+      
+  - props driling
+  
+      Parent Component
+          ||
+          `,
+      Child A Component
+          ||
+          `,
+      Child B Component
+          ||
+          `,
+      Child C Component
+
+      now I have a data "name" which I need to pass directly to Child C component, how can I do that ?
+
+      Data is passed from parent to Child A Component and then to Child B Component and then to Child C Component, and finaly Child C Component can access "name" data.
+      This concept is called props driling.
+      
+      Note:
+        Excessive prop drilling can lead to unnecessary re-renders of intermediate components. Even if those components don’t directly use the props, they still need to pass them down, which can negatively impact performance.
+        To avoid this, we can make use of context API and context hook
+        
+  - context api
+  
+      1. create ( create a context )
+      2. provide ( provide data )
+      3. consume ( consume data )
+
+      dataContext = createContext()
+
+      const App  = () => {
+        return (
+          <dataContext.Provider value={"data value"}>
+            <ChildAComponent/>
+          </dataContext.Provider>
+        }
+      }
+
+      const ChildAComponent = () => {
+        return (
+          <dataContext.Consumer>
+            {
+              (name) => {
+                return (
+                  <p>{name}</p>
+                )
+              }
+            }
+          </dataContext.Consumer>
+        )
+      }
+      
+   - passing data component to component, parent to child, sliblings etc
 */
