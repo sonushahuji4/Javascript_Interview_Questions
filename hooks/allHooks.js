@@ -464,7 +464,125 @@ const App = () => {
 
 
 
+/**
+  -------------------- APIs Backend ------------------------
+  1. What are HTTP methods
+  - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE, CONNECT, 
+  
+  - GET
+    Purpose: Retrieve data from a server.
+  - POST
+    Purpose: Send data to a server to create a new resource.
+  - PUT
+    Purpose: Update an existing resource or create it if it does not exist.
+    Usage: Replaces the entire resource with the provided data.
+  - PATCH
+    Purpose: Apply partial modifications to a resource.
+    Usage: Updates part of the resource.
+  - DELETE
+    Purpose: Remove a resource from the server.
+    Usage: Deletes a specified resource.
+  - HEAD
+    Purpose: Retrieve metadata about a resource.
+    Usage: Similar to GET, but without the response body.
+  - OPTIONS
+    Purpose: Describe the communication options for the target resource.
+    Usage: Returns the HTTP methods that the server supports for the specified URL.
+  - TRACE
+    Purpose: Perform a message loop-back test along the path to the target resource.
+    Usage: Useful for debugging and diagnostic purposes.
+  - CONNECT
+    Purpose: Establish a tunnel to the server identified by the target resource.
+    Usage: Used for creating a network connection to a resource.
 
+  Sure! Here are the short differences between these HTTP methods:
+
+1. GET vs POST Methods
+  
+  GET:
+
+    Used to retrieve data from a server.
+    Data is sent in the URL.
+    Safe and idempotent (no side effects, and repeated requests have the same effect as a single request).
+    Limited data length due to URL length restrictions.
+    Not secure for sensitive data.
+    
+  POST:
+
+    Used to send data to a server to create/update a resource.
+    Data is sent in the body of the request.
+    Not idempotent (repeated requests can have different effects).
+    No data length restrictions.
+    More secure for sensitive data when used with HTTPS.
+    
+2. PUT vs PATCH Methods
+
+  PUT:
+
+    Used to update or create a resource.
+    Sends the entire resource for update.
+    Idempotent (repeated requests result in the same effect).
+  
+  PATCH:
+
+  Used to partially update a resource.
+  Sends only the changes to be applied.
+  Not necessarily idempotent (repeated requests may have different effects).
+
+3. PUT vs POST Methods
+
+  PUT:
+
+    Used to create or replace a resource at a specific URL.
+    Idempotent (repeated requests result in the same effect).
+    The client defines the URL of the resource.
+
+  POST:
+
+    Used to create a new resource, or to submit data to be processed.
+    Not idempotent (repeated requests can have different effects).
+    The server defines the URL of the new resource.
+
+
+HTTP Status Code
+
+  1xx: Informational
+    100 Continue: The server has received the request headers and the client should proceed to send the request body.
+    101 Switching Protocols: The server is switching protocols as requested by the client.
+  
+  2xx: Success
+    200 OK: The request was successful.
+    201 Created: The request was successful and a resource was created.
+    202 Accepted: The request has been accepted for processing, but the processing is not complete.
+    204 No Content: The request was successful but there is no content to send in the response.
+
+  3xx: Redirection
+    301 Moved Permanently: The resource has been permanently moved to a new URL.
+    302 Found: The resource is temporarily located at a different URL.
+    304 Not Modified: The resource has not been modified since the last request.
+
+  4xx: Client Error
+    400 Bad Request: The server cannot process the request due to a client error.
+    401 Unauthorized: Authentication is required and has failed or has not been provided.
+    403 Forbidden: The server understands the request but refuses to authorize it.
+    404 Not Found: The requested resource could not be found.
+    405 Method Not Allowed: The request method is not supported for the requested resource.
+
+  5xx: Server Error
+    500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.
+    501 Not Implemented: The server does not support the functionality required to fulfill the request.
+    502 Bad Gateway: The server received an invalid response from an upstream server.
+    503 Service Unavailable: The server is not ready to handle the request, often due to maintenance or overload.
+    504 Gateway Timeout: The server did not receive a timely response from an upstream server.
+
+
+  Main components of HTTP request
+    - Request Line
+    - Headers
+    - Body
+    - URL/Path Parameters
+    - Cookies
+*/
 
 
 
