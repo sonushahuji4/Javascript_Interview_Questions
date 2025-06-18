@@ -24,6 +24,21 @@ const [age, setAge] = useState(28);
 const [name, setName] = useState('Taylor');
 const [todos, setTodos] = useState(() => createTodos());
 
+// inside of useState(), how it is create and built
+const stateValues = [];
+let callIndex = -1
+const useState = (initialState) => {
+  callIndex += 1;
+  const currentCallIndex = Number(callIndex);
+  if(stateValues[currentCallIndex] === undefined){
+    stateValues[currentCallIndex] = initialState;
+  }
+  const setValue = (newValue) => {
+    stateValues[currentCallIndex] = newValue;
+    renderApp()
+  }
+  return [stateValues[currentCallIndex], setValue];
+}
 
 /**
  * 2. useEffect()
